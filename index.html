@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nzubechukwu Ohalete</title>
+<meta name="description" content="Nzubechukwu Ohalete — PhD candidate in Data Science & Analytics at Kennesaw State University. LLM systems for survey research, demographic bias auditing, and trustworthy AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F2E9;
+    --paper-2:#FBF8F1;
+    --ink:#171513;
+    --ink-soft:#544e46;
+    --ink-faint:#8b8378;
+    --line:#e0d9cb;
+    --accent:#15564A;
+    --accent-soft:#1d6f5f;
+    --shadow:0 1px 2px rgba(23,21,19,.04),0 8px 28px rgba(23,21,19,.06);
+    --shadow-lift:0 2px 6px rgba(23,21,19,.06),0 18px 44px rgba(23,21,19,.12);
+    --r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:16.5px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 18% -8%,rgba(21,86,74,.06),transparent 42%),radial-gradient(circle at 92% 4%,rgba(168,108,60,.05),transparent 38%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- type ---------- */
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  .display{font-size:clamp(2.6rem,6vw,4.1rem);font-weight:600;letter-spacing:-.025em}
+  .lede{font-size:clamp(1.06rem,1.6vw,1.22rem);color:var(--ink-soft);line-height:1.5;max-width:34ch}
+  .mono{font-family:"JetBrains Mono",monospace}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:200px 1fr;gap:46px;align-items:center;padding:74px 0 18px}
+  .portrait{
+    position:relative;width:200px;height:240px;border-radius:18px;overflow:hidden;
+    background:linear-gradient(150deg,#e9e2d4,#d8cfbe);box-shadow:var(--shadow);
+    border:1px solid var(--line);flex:none;
+  }
+  .portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .ph{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:12px;font-family:"JetBrains Mono",monospace;font-size:.7rem;
+    color:var(--ink-faint);letter-spacing:.02em}
+  .name-block .kicker{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .name-block .display{margin-bottom:16px}
+  .name-block .nick{color:var(--ink-faint);font-family:"Fraunces",serif;font-style:italic;font-weight:400}
+
+  .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .links a{
+    font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.01em;
+    padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);
+    color:var(--ink-soft);transition:.18s ease;display:inline-flex;align-items:center;gap:7px}
+  .links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .links a .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.75}
+
+  .meta-loc{margin-top:18px;font-size:.92rem;color:var(--ink-faint);display:flex;align-items:center;gap:8px}
+  .meta-loc::before{content:"";width:16px;height:1px;background:var(--ink-faint)}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+  .sec-num{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--accent);letter-spacing:.05em}
+  .sec-title{font-size:1.65rem}
+  .about-body{font-size:1.16rem;line-height:1.68;max-width:60ch;color:var(--ink)}
+  .about-body strong{font-weight:600}
+  .about-body .hl{color:var(--accent);font-weight:500}
+
+  /* ---------- generic cards ---------- */
+  .card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;overflow:hidden}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+
+  /* education */
+  .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .edu-card{padding:24px 22px}
+  .edu-card .deg{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .edu-card h3{font-size:1.18rem;margin-bottom:5px}
+  .edu-card .field{color:var(--ink-soft);font-size:.95rem;margin-bottom:14px}
+  .edu-card .foot{font-size:.85rem;color:var(--ink-faint);border-top:1px solid var(--line);
+    padding-top:12px;margin-top:auto}
+  .edu-card .diss{font-size:.86rem;color:var(--ink-soft);font-style:italic;line-height:1.45}
+
+  /* publications */
+  .pubs{display:flex;flex-direction:column;gap:2px}
+  .pub{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start;
+    padding:20px 6px;border-bottom:1px solid var(--line)}
+  .pub:last-child{border-bottom:none}
+  .pub .yr{font-family:"JetBrains Mono",monospace;font-size:.85rem;color:var(--accent);padding-top:2px}
+  .pub .ptitle{font-family:"Fraunces",serif;font-size:1.12rem;font-weight:500;line-height:1.25;margin-bottom:5px}
+  .pub .pmeta{font-size:.88rem;color:var(--ink-faint)}
+  .pub .pmeta em{font-style:normal;color:var(--ink-soft)}
+  .pub .plink{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);
+    white-space:nowrap;padding-top:4px;transition:.15s}
+  .pub .plink:hover{text-decoration:underline}
+  .pub .plink::after{content:" ↗"}
+
+  /* industry 2x2 */
+  .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ind-card{display:flex;flex-direction:column}
+  .ind-photo{position:relative;height:172px;background:linear-gradient(150deg,#e7e0d1,#d6ccba);overflow:hidden}
+  .ind-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .ind-body{padding:20px 22px}
+  .ind-body .org{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .ind-body h3{font-size:1.16rem}
+  .ind-body .role{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-faint)}
+  .ind-body p{font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+  .ind-body .badge{display:inline-block;margin-top:12px;font-family:"JetBrains Mono",monospace;
+    font-size:.68rem;letter-spacing:.04em;color:var(--accent);background:rgba(21,86,74,.08);
+    border:1px solid rgba(21,86,74,.18);padding:3px 9px;border-radius:999px}
+
+  /* projects grid */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .proj{display:flex;flex-direction:column;padding:20px 20px 18px}
+  .proj h3{font-size:1.04rem;line-height:1.2;margin-bottom:10px;padding-right:18px}
+  .proj p{font-size:.85rem;color:var(--ink-soft);line-height:1.5;flex:1}
+  .proj .tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 16px}
+  .proj .tags span{font-family:"JetBrains Mono",monospace;font-size:.64rem;color:var(--ink-faint);
+    background:var(--paper);border:1px solid var(--line);padding:2px 7px;border-radius:6px}
+  .proj .repo{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);
+    align-self:flex-start;transition:.15s}
+  .proj .repo::after{content:" →";transition:.18s ease}
+  .proj:hover .repo::after{transform:translateX(3px)}
+
+  /* talks */
+  .talk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .talk-card{display:flex;flex-direction:column}
+  .talk-photo{position:relative;height:188px;background:linear-gradient(150deg,#e7e0d1,#d6ccba);overflow:hidden}
+  .talk-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .talk-body{padding:20px 22px}
+  .talk-body .ev{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+  .talk-body h3{font-size:1.08rem;line-height:1.25;margin-bottom:8px}
+  .talk-body .where{font-size:.86rem;color:var(--ink-faint)}
+  .talk-extra{margin-top:18px;padding:16px 20px;border:1px dashed var(--line);border-radius:var(--r);
+    font-size:.9rem;color:var(--ink-soft);background:var(--paper-2)}
+  .talk-extra strong{color:var(--ink);font-weight:600}
+
+  /* teaching */
+  .teach-lead{font-size:1.05rem;color:var(--ink-soft);max-width:62ch;margin-bottom:24px}
+  .course-tbl{width:100%;border-collapse:collapse;font-size:.9rem}
+  .course-tbl th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:.68rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;
+    padding:0 12px 12px;border-bottom:1px solid var(--line)}
+  .course-tbl td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .course-tbl tr:last-child td{border-bottom:none}
+  .course-tbl .c-name{font-weight:500}
+  .course-tbl .c-code{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--ink-faint)}
+  .course-tbl .c-role{font-size:.82rem;color:var(--ink-soft);white-space:nowrap}
+  .ior{color:var(--accent);font-weight:600}
+
+  /* honors */
+  .hon-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px}
+  .hon-photo{position:relative;height:150px;background:linear-gradient(150deg,#e7e0d1,#d6ccba);overflow:hidden}
+  .hon-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .hon-card{display:flex;flex-direction:column;padding:0}
+  .hon-card.text-only{padding:22px 22px;justify-content:center}
+  .hon-body{padding:18px 20px}
+  .hon-card .yr{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);margin-bottom:9px}
+  .hon-card h3{font-size:1.05rem;line-height:1.22;margin-bottom:6px}
+  .hon-card p{font-size:.84rem;color:var(--ink-soft);line-height:1.45}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:34px 0 50px;margin-top:18px}
+  .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+  .foot-row .fname{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:600}
+  .foot-links{display:flex;gap:18px;font-family:"JetBrains Mono",monospace;font-size:.76rem}
+  .foot-links a{color:var(--ink-soft);transition:.15s}
+  .foot-links a:hover{color:var(--accent)}
+  .foot-row .cr{width:100%;font-size:.76rem;color:var(--ink-faint);margin-top:6px}
+
+  /* ---------- entrance animation ---------- */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .hero .portrait{animation-delay:.05s}
+  .hero .name-block{animation-delay:.16s}
+  section{animation-delay:.05s}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:860px){
+    .edu-grid{grid-template-columns:1fr}
+    .proj-grid{grid-template-columns:repeat(2,1fr)}
+    .hon-grid{grid-template-columns:1fr 1fr}
+    .hon-card.span{grid-column:1 / -1}
+  }
+  @media(max-width:680px){
+    body{font-size:16px}
+    .hero{grid-template-columns:1fr;gap:26px;padding:48px 0 8px;text-align:left}
+    .portrait{width:150px;height:182px}
+    .ind-grid,.talk-grid,.proj-grid,.hon-grid{grid-template-columns:1fr}
+    .pub{grid-template-columns:1fr;gap:6px}
+    .pub .plink{padding-top:2px}
+    .lede{max-width:none}
+    section{padding:42px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="hero">
+    <div class="portrait reveal">
+      <img src="images/headshot.jpg" alt="Nzubechukwu Ohalete" onerror="this.style.display='none'">
+      <span class="ph">add<br>images/headshot.jpg</span>
+    </div>
+    <div class="name-block reveal">
+      <div class="kicker">Data Science &middot; Machine Learning &middot; Trustworthy AI</div>
+      <h1 class="display">Nzubechukwu Ohalete <span class="nick">(Nzube)</span></h1>
+      <p class="lede">PhD candidate in Data Science &amp; Analytics at Kennesaw State University. I build and evaluate large language model systems for survey research, demographic bias auditing, and trustworthy AI.</p>
+      <div class="meta-loc">Atlanta, Georgia</div>
+      <nav class="links">
+        <a href="mailto:nohalete@students.kennesaw.edu"><span class="dot"></span>Email</a>
+        <a href="https://scholar.google.com/citations?user=GTUpTUUAAAAJ&hl=en" target="_blank" rel="noopener"><span class="dot"></span>Google Scholar</a>
+        <a href="https://arxiv.org/abs/2510.12637" target="_blank" rel="noopener"><span class="dot"></span>arXiv</a>
+        <a href="https://www.linkedin.com/in/nzube-ohalete/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+        <a href="https://github.com/Profzubbyd" target="_blank" rel="noopener"><span class="dot"></span>GitHub</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ABOUT -->
+  <section class="reveal" id="about">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">About</h2></div>
+    <p class="about-body">
+      My research centers on <span class="hl">COSTAR-A</span>, a structured prompting framework I developed that lets large language models autonomously complete survey instruments as synthetic personas. My dissertation follows that idea across three studies: whether LLMs can complete real surveys end to end, how memory architecture shapes the reliability of their responses, and whether the personas they generate reproduce demographic bias when benchmarked against U.S. Census data.
+      <br><br>
+      Alongside the academic work, I've partnered with <strong>Delta</strong>, <strong>Blue Cross Blue Shield</strong>, <strong>Atlanticus</strong>, and <strong>Southern Company</strong> on applied machine learning, and presented at INFORMS and JSM. I'm a builder at heart, most at home shipping things that hold up against messy, real-world data.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="reveal" id="education">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Education</h2></div>
+    <div class="edu-grid">
+      <article class="card edu-card" style="display:flex;flex-direction:column">
+        <div class="deg">Ph.D.</div>
+        <h3>Kennesaw State University</h3>
+        <div class="field">Data Science &amp; Analytics</div>
+        <div class="diss">Dissertation: <em>Investigating Demographic Bias and Autonomous Survey Completion in Large Language Models.</em></div>
+        <div class="foot">Kennesaw, GA</div>
+      </article>
+      <article class="card edu-card" style="display:flex;flex-direction:column">
+        <div class="deg">M.S.</div>
+        <h3>Bowling Green State University</h3>
+        <div class="field">Applied Statistics &middot; Business Analytics</div>
+        <div class="diss">Thesis: <em>A Study of Online Auction Processes Using Functional Data Analysis.</em></div>
+        <div class="foot">3.92 / 4.0 &middot; 2022 &middot; Bowling Green, OH</div>
+      </article>
+      <article class="card edu-card" style="display:flex;flex-direction:column">
+        <div class="deg">B.S.</div>
+        <h3>University of Nigeria</h3>
+        <div class="field">Mathematics</div>
+        <div class="diss">First Class Honors. Thesis on exact solutions of the Navier&ndash;Stokes equations.</div>
+        <div class="foot">4.65 / 5.0 &middot; 2016 &middot; Nsukka, Nigeria</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="reveal" id="publications">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Publications</h2></div>
+    <div class="pubs">
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div>
+          <div class="ptitle">COSTAR-A: A Prompting Framework for Enhancing Large Language Model Performance on Point-of-View Questions</div>
+          <div class="pmeta"><em>Ohalete, N., Gittner, K., &amp; Matheny, L.</em> &middot; arXiv:2510.12637</div>
+        </div>
+        <a class="plink" href="https://arxiv.org/abs/2510.12637" target="_blank" rel="noopener">arXiv</a>
+      </div>
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div>
+          <div class="ptitle">Comparing Different Machine Learning Models for Credit Risk Prediction</div>
+          <div class="pmeta"><em>Ohalete, N., Muritala, F., &amp; Ray, H.</em> &middot; Joint Statistical Meetings (JSM), Nashville, TN</div>
+        </div>
+        <a class="plink" href="https://doi.org/10.5281/zenodo.16952069" target="_blank" rel="noopener">DOI</a>
+      </div>
+      <div class="pub">
+        <div class="yr">2022</div>
+        <div>
+          <div class="ptitle">A Study of Online Auction Processes Using Functional Data Analysis</div>
+          <div class="pmeta"><em>Ohalete, N.</em> &middot; Master's thesis, Bowling Green State University &middot; OhioLINK ETD</div>
+        </div>
+        <a class="plink" href="http://rave.ohiolink.edu/etdc/view?acc_num=bgsu164880892837653" target="_blank" rel="noopener">OhioLINK</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY RESEARCH -->
+  <section class="reveal" id="industry">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Industry Research</h2></div>
+    <div class="ind-grid">
+      <article class="card ind-card">
+        <div class="ind-photo">
+          <img src="images/delta.jpg" alt="Delta Air Lines presentation" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/delta.jpg</span>
+        </div>
+        <div class="ind-body">
+          <div class="org"><h3>Delta Air Lines</h3><span class="role">Customer Experience</span></div>
+          <p>Analyzed 32M+ calls, 13M+ messages, and 60M+ intent records to reduce repeat customer contacts. A CatBoost model reached 77% accuracy and drove a modeled 13% reduction.</p>
+        </div>
+      </article>
+      <article class="card ind-card">
+        <div class="ind-photo">
+          <img src="images/southern.jpg" alt="Southern Company presentation" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/southern.jpg</span>
+        </div>
+        <div class="ind-body">
+          <div class="org"><h3>Southern Company</h3><span class="role">Churn Forecasting</span></div>
+          <p>Forecast early customer churn across 64 engineered features. A random forest reached 96% accuracy and 96% F1.</p>
+          <span class="badge">1st place &middot; CDSA Industry Competition</span>
+        </div>
+      </article>
+      <article class="card ind-card">
+        <div class="ind-body">
+          <div class="org"><h3>Blue Cross Blue Shield of TN</h3><span class="role">Healthcare</span></div>
+          <p>Evaluated continuous glucose monitoring across 540K+ member records and 487K+ claims, with case-control matching on 7,500+ pairs. Type&nbsp;I patients on CGM saw significantly greater HbA1c reductions than matched controls.</p>
+        </div>
+      </article>
+      <article class="card ind-card">
+        <div class="ind-body">
+          <div class="org"><h3>Atlanticus</h3><span class="role">Credit Risk</span></div>
+          <p>Modeled credit risk on 988K+ records, applying SMOTE for class imbalance and trimming 458 features to 116. A random forest reached 88% accuracy and 81% precision.</p>
+          <span class="badge">3rd place &middot; CDSA Industry Competition</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="reveal" id="projects">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Data Science Projects</h2></div>
+    <div class="proj-grid">
+      <a class="card proj" href="https://github.com/Profzubbyd/spam-classifier" target="_blank" rel="noopener">
+        <h3>SMS Spam Detection</h3>
+        <p>Five classifiers across 5,574 text messages. Random forest reached 98.1% accuracy.</p>
+        <div class="tags"><span>Python</span><span>NLTK</span><span>SMOTE</span><span>scikit-learn</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/animal-images-classification" target="_blank" rel="noopener">
+        <h3>Animal Image Classification</h3>
+        <p>Transfer learning with MobileNetV2 and Bayesian hyperparameter tuning on 1,200 images, reaching 90%.</p>
+        <div class="tags"><span>TensorFlow</span><span>Keras</span><span>Transfer Learning</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/Credit_card_fraud_detection" target="_blank" rel="noopener">
+        <h3>Credit Card Fraud Detection</h3>
+        <p>Five classifiers on European cardholder data. A neural network reached 96% accuracy.</p>
+        <div class="tags"><span>Python</span><span>SVC</span><span>KNN</span><span>SMOTE</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/Big-data-One-class-classification" target="_blank" rel="noopener">
+        <h3>Fraud Detection at Scale</h3>
+        <p>A PSOAANN one-class model built on Spark, running over 10M+ transaction records.</p>
+        <div class="tags"><span>Spark</span><span>Python</span><span>PSO</span><span>Big Data</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/recommender-system" target="_blank" rel="noopener">
+        <h3>Amazon Coupon Recommender</h3>
+        <p>A coupon-usage recommender built from ensemble and boosting classifiers with competitive accuracy.</p>
+        <div class="tags"><span>XGBoost</span><span>LightGBM</span><span>scikit-learn</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/flight-delays-2015" target="_blank" rel="noopener">
+        <h3>U.S. Flight Delay Analysis</h3>
+        <p>Longitudinal multilevel models across 29 major airports. ORD and ATL topped 5,000 delay hours.</p>
+        <div class="tags"><span>SAS</span><span>Multilevel Models</span><span>Longitudinal</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section class="reveal" id="talks">
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Selected Talks</h2></div>
+    <div class="talk-grid">
+      <article class="card talk-card">
+        <div class="talk-photo">
+          <img src="images/informs.jpg" alt="INFORMS 2025 presentation" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/informs.jpg</span>
+        </div>
+        <div class="talk-body">
+          <div class="ev">INFORMS 2025 &middot; Atlanta</div>
+          <h3>Bridging the Gap: COSTAR-A for Smarter Prompting in Localized Language Models</h3>
+          <div class="where">INFORMS Annual Meeting &middot; October 2025</div>
+        </div>
+      </article>
+      <article class="card talk-card">
+        <div class="talk-photo">
+          <img src="images/jsm.jpg" alt="JSM 2025 presentation" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/jsm.jpg</span>
+        </div>
+        <div class="talk-body">
+          <div class="ev">JSM 2025 &middot; Nashville</div>
+          <h3>Optimizing Credit Risk Classification Using Machine Learning Techniques</h3>
+          <div class="where">Joint Statistical Meetings &middot; August 2025</div>
+        </div>
+      </article>
+    </div>
+    <div class="talk-extra">
+      <strong>Panelist</strong> &mdash; "AI in Higher Education: Evolving Use Cases and Ethical Implications." USG Ethics Awareness Week, Kennesaw State University. November 2025.
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section class="reveal" id="teaching">
+    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Teaching</h2></div>
+    <p class="teach-lead">Over a decade teaching mathematics, statistics, and data science across the U.S. and Nigeria, as both instructor of record and teaching assistant. Roles marked <span class="ior">IoR</span> were taught as instructor of record.</p>
+    <table class="course-tbl">
+      <thead>
+        <tr><th>Course</th><th>Level</th><th>Role &amp; Term</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="c-name">Introduction to Data Science</span><br><span class="c-code">DATA 1501</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> Spring 2026 &middot; TA Fall 2023</td></tr>
+        <tr><td><span class="c-name">Python for Data Science</span><br><span class="c-code">DS 7140</span></td><td>Master's</td><td class="c-role">TA &middot; Spring 2025</td></tr>
+        <tr><td><span class="c-name">Statistical Computing</span><br><span class="c-code">STAT 7020</span></td><td>Master's</td><td class="c-role">TA &middot; Fall 2023, Spring 2024</td></tr>
+        <tr><td><span class="c-name">Data Mining in Business Analytics</span><br><span class="c-code">STAT 4440</span></td><td>Bachelor's</td><td class="c-role">TA &middot; Spring 2022</td></tr>
+        <tr><td><span class="c-name">Data Mining</span><br><span class="c-code">STAT 6440</span></td><td>Master's</td><td class="c-role">TA &middot; Spring 2022</td></tr>
+        <tr><td><span class="c-name">Regression Analysis</span><br><span class="c-code">STAT 5020</span></td><td>Bachelor's, Master's</td><td class="c-role">TA &middot; Fall 2021</td></tr>
+        <tr><td><span class="c-name">Linear and Integer Programming</span><br><span class="c-code">OR 6610</span></td><td>Master's</td><td class="c-role">TA &middot; Fall 2021</td></tr>
+        <tr><td><span class="c-name">Elementary Differential Equations I &amp; II</span><br><span class="c-code">MTH 203 / 204</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> 2019&ndash;2021</td></tr>
+        <tr><td><span class="c-name">Elementary Mathematics I &amp; II</span><br><span class="c-code">MTH 101 / 102</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> 2019&ndash;2021</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- HONORS -->
+  <section class="reveal" id="honors">
+    <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Honors</h2></div>
+    <div class="hon-grid">
+      <article class="card hon-card">
+        <div class="hon-photo">
+          <img src="images/award.jpg" alt="Outstanding Student Award" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/award.jpg</span>
+        </div>
+        <div class="hon-body">
+          <div class="yr">2026</div>
+          <h3>Outstanding Student Award</h3>
+          <p>Top doctoral student in the PhD in Data Science &amp; Analytics, Kennesaw State University.</p>
+        </div>
+      </article>
+      <article class="card hon-card text-only">
+        <div class="yr">2026</div>
+        <h3>Three Minute Thesis &mdash; First Place</h3>
+        <p>Graduate College, Kennesaw State University.</p>
+      </article>
+      <article class="card hon-card text-only">
+        <div class="yr">2022&ndash;2025</div>
+        <h3>Dean's 4.0 Club</h3>
+        <p>A perfect 4.0 GPA across six consecutive doctoral semesters, College of Computing &amp; Software Engineering.</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <span class="fname">Nzubechukwu Ohalete</span>
+    <nav class="foot-links">
+      <a href="mailto:nohalete@students.kennesaw.edu">Email</a>
+      <a href="https://scholar.google.com/citations?user=GTUpTUUAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://www.linkedin.com/in/nzube-ohalete/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Profzubbyd" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <span class="cr">&copy; <span id="yr"></span> Nzubechukwu Ohalete &middot; Atlanta, Georgia</span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
