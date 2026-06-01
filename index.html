@@ -18,6 +18,8 @@
     --line:#e0d9cb;
     --accent:#15564A;
     --accent-soft:#1d6f5f;
+    --link:#1862d6;
+    --link-soft:#3d82f0;
     --shadow:0 1px 2px rgba(23,21,19,.04),0 8px 28px rgba(23,21,19,.06);
     --shadow-lift:0 2px 6px rgba(23,21,19,.06),0 18px 44px rgba(23,21,19,.12);
     --r:14px;
@@ -64,8 +66,8 @@
     font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.01em;
     padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);
     color:var(--ink-soft);transition:.18s ease;display:inline-flex;align-items:center;gap:7px}
-  .links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
-  .links a .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.75}
+  .links a:hover{border-color:var(--link);color:var(--link);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .links a .dot{width:5px;height:5px;border-radius:50%;background:var(--link);opacity:.85}
 
   .meta-loc{margin-top:18px;font-size:.92rem;color:var(--ink-faint);display:flex;align-items:center;gap:8px}
   .meta-loc::before{content:"";width:16px;height:1px;background:var(--ink-faint)}
@@ -105,7 +107,7 @@
   .pub .ptitle{font-family:"Fraunces",serif;font-size:1.12rem;font-weight:500;line-height:1.25;margin-bottom:5px}
   .pub .pmeta{font-size:.88rem;color:var(--ink-faint)}
   .pub .pmeta em{font-style:normal;color:var(--ink-soft)}
-  .pub .plink{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);
+  .pub .plink{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--link);
     white-space:nowrap;padding-top:4px;transition:.15s}
   .pub .plink:hover{text-decoration:underline}
   .pub .plink::after{content:" ↗"}
@@ -133,7 +135,7 @@
   .proj .tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 16px}
   .proj .tags span{font-family:"JetBrains Mono",monospace;font-size:.64rem;color:var(--ink-faint);
     background:var(--paper);border:1px solid var(--line);padding:2px 7px;border-radius:6px}
-  .proj .repo{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);
+  .proj .repo{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--link);
     align-self:flex-start;transition:.15s}
   .proj .repo::after{content:" →";transition:.18s ease}
   .proj:hover .repo::after{transform:translateX(3px)}
@@ -182,7 +184,7 @@
   .foot-row .fname{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:600}
   .foot-links{display:flex;gap:18px;font-family:"JetBrains Mono",monospace;font-size:.76rem}
   .foot-links a{color:var(--ink-soft);transition:.15s}
-  .foot-links a:hover{color:var(--accent)}
+  .foot-links a:hover{color:var(--link)}
   .foot-row .cr{width:100%;font-size:.76rem;color:var(--ink-faint);margin-top:6px}
 
   /* ---------- entrance animation ---------- */
