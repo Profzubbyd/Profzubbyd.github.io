@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nzubechukwu Ohalete | Trustworthy AI, Synthetic Data & Data Science</title>
+<meta name="description" content="Nzubechukwu Ohalete is a Part-Time Assistant Professor of Data Science and Analytics at Kennesaw State University. Research in trustworthy AI, LLM agents, synthetic data, data quality, and algorithmic bias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F2E9;
+    --paper-2:#FBF8F1;
+    --ink:#171513;
+    --ink-soft:#544e46;
+    --ink-faint:#8b8378;
+    --line:#e0d9cb;
+    --accent:#15564A;
+    --accent-soft:#1d6f5f;
+    --link:#1862d6;
+    --link-soft:#3d82f0;
+    --shadow:0 1px 2px rgba(23,21,19,.04),0 8px 28px rgba(23,21,19,.06);
+    --shadow-lift:0 2px 6px rgba(23,21,19,.06),0 18px 44px rgba(23,21,19,.12);
+    --r:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:16.5px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 18% -8%,rgba(21,86,74,.06),transparent 42%),radial-gradient(circle at 92% 4%,rgba(168,108,60,.05),transparent 38%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible{outline:2px solid var(--link);outline-offset:4px;border-radius:4px}
+
+  /* ---------- navigation ---------- */
+  .site-nav-shell{position:sticky;top:0;z-index:20;background:rgba(246,242,233,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(224,217,203,.75)}
+  .site-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:48px}
+  .site-nav .brand{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:.98rem;white-space:nowrap}
+  .site-nav .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:16px;font-family:"JetBrains Mono",monospace;font-size:.68rem;color:var(--ink-soft)}
+  .site-nav .nav-links a{transition:.15s ease}
+  .site-nav .nav-links a:hover{color:var(--link)}
+
+  /* ---------- type ---------- */
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  .display{font-size:clamp(2.6rem,6vw,4.1rem);font-weight:600;letter-spacing:-.025em}
+  .lede{font-size:clamp(1.06rem,1.6vw,1.22rem);color:var(--ink-soft);line-height:1.5;max-width:43ch}
+  .mono{font-family:"JetBrains Mono",monospace}
+  .inline-link{color:var(--link)}
+  .inline-link:hover{text-decoration:underline}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:200px 1fr;gap:46px;align-items:center;padding:64px 0 18px}
+  .portrait{
+    position:relative;width:200px;height:240px;border-radius:18px;overflow:hidden;
+    background:linear-gradient(150deg,#e9e2d4,#d8cfbe);box-shadow:var(--shadow);
+    border:1px solid var(--line);flex:none;
+  }
+  .portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .ph{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:12px;font-family:"JetBrains Mono",monospace;font-size:.7rem;
+    color:var(--ink-faint);letter-spacing:.02em}
+  .name-block .kicker{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .name-block .display{margin-bottom:16px}
+  .name-block .nick{color:var(--ink-faint);font-family:"Fraunces",serif;font-style:italic;font-weight:400}
+
+  .links{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .links a{
+    font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.01em;
+    padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);
+    color:var(--ink-soft);transition:.18s ease;display:inline-flex;align-items:center;gap:7px}
+  .links a:hover{border-color:var(--link);color:var(--link);transform:translateY(-1px);box-shadow:var(--shadow)}
+  .links a .dot{width:5px;height:5px;border-radius:50%;background:var(--link);opacity:.85}
+
+  .meta-loc{margin-top:18px;font-size:.92rem;color:var(--ink-faint);display:flex;align-items:center;gap:8px}
+  .meta-loc::before{content:"";width:16px;height:1px;background:var(--ink-faint)}
+
+  /* ---------- sections ---------- */
+  section{padding:52px 0;border-top:1px solid var(--line);scroll-margin-top:62px}
+  section:first-of-type{border-top:none}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+  .sec-num{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--accent);letter-spacing:.05em}
+  .sec-title{font-size:1.65rem}
+  .about-body{font-size:1.16rem;line-height:1.68;max-width:66ch;color:var(--ink)}
+  .about-body strong{font-weight:600}
+  .about-body .hl{color:var(--accent);font-weight:500}
+
+  /* ---------- generic cards ---------- */
+  .card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;overflow:hidden}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+
+  /* research */
+  .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .research-card{padding:22px 20px 20px;display:flex;flex-direction:column}
+  .research-card .rnum{font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .research-card h3{font-size:1.08rem;line-height:1.2;margin-bottom:10px}
+  .research-card p{font-size:.88rem;color:var(--ink-soft);line-height:1.52}
+  .research-card .rstat{margin-top:15px;padding-top:12px;border-top:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--accent)}
+  .research-agenda{margin-top:18px;padding:20px 22px;border:1px dashed var(--line);border-radius:var(--r);background:var(--paper-2);font-size:.93rem;color:var(--ink-soft);line-height:1.58}
+  .research-agenda strong{color:var(--ink);font-weight:600}
+
+  /* publications */
+  .pubs{display:flex;flex-direction:column;gap:2px}
+  .pub{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start;
+    padding:20px 6px;border-bottom:1px solid var(--line)}
+  .pub:last-child{border-bottom:none}
+  .pub .yr{font-family:"JetBrains Mono",monospace;font-size:.85rem;color:var(--accent);padding-top:2px}
+  .pub .ptitle{font-family:"Fraunces",serif;font-size:1.12rem;font-weight:500;line-height:1.25;margin-bottom:5px}
+  .pub .pmeta{font-size:.88rem;color:var(--ink-faint)}
+  .pub .pmeta em{font-style:normal;color:var(--ink-soft)}
+  .pub .status{display:inline-block;margin-left:7px;font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:rgba(21,86,74,.08);border:1px solid rgba(21,86,74,.18);padding:2px 7px;border-radius:999px;vertical-align:1px}
+  .pub .plink{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--link);
+    white-space:nowrap;padding-top:4px;transition:.15s}
+  .pub .plink:hover{text-decoration:underline}
+  .pub .plink::after{content:" ↗"}
+
+  /* teaching */
+  .teach-lead{font-size:1.05rem;color:var(--ink-soft);max-width:67ch;margin-bottom:24px}
+  .table-wrap{width:100%;overflow-x:auto;border-radius:10px}
+  .course-tbl{width:100%;border-collapse:collapse;font-size:.9rem;min-width:690px}
+  .course-tbl th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:.68rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;
+    padding:0 12px 12px;border-bottom:1px solid var(--line)}
+  .course-tbl td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .course-tbl tr:last-child td{border-bottom:none}
+  .course-tbl .c-name{font-weight:500}
+  .course-tbl .c-code{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--ink-faint)}
+  .course-tbl .c-role{font-size:.82rem;color:var(--ink-soft);white-space:nowrap}
+  .ior{color:var(--accent);font-weight:600}
+
+  /* honors */
+  .hon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .hon-photo{position:relative;height:150px;background:linear-gradient(150deg,#e7e0d1,#d6ccba);overflow:hidden}
+  .hon-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .hon-card{display:flex;flex-direction:column;padding:0}
+  .hon-card.text-only{padding:22px 22px;justify-content:center;min-height:175px}
+  .hon-body{padding:18px 20px}
+  .hon-card .yr{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);margin-bottom:9px}
+  .hon-card h3{font-size:1.05rem;line-height:1.22;margin-bottom:6px}
+  .hon-card p{font-size:.84rem;color:var(--ink-soft);line-height:1.45}
+  .hon-extra{margin-top:18px;padding:16px 20px;border:1px dashed var(--line);border-radius:var(--r);background:var(--paper-2);font-size:.9rem;color:var(--ink-soft)}
+  .hon-extra strong{color:var(--ink);font-weight:600}
+
+  /* grants */
+  .grant-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grant-card{padding:22px 20px;display:flex;flex-direction:column}
+  .grant-card .gstatus{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .grant-card h3{font-size:1.06rem;line-height:1.22;margin-bottom:8px}
+  .grant-card .sponsor{font-size:.82rem;color:var(--ink-faint);margin-bottom:12px}
+  .grant-card p{font-size:.86rem;color:var(--ink-soft);line-height:1.5;flex:1}
+  .grant-card .amount{font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--accent);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+  .grant-card .glink{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--link);margin-top:10px;align-self:flex-start}
+  .grant-card .glink::after{content:" ↗"}
+  .grant-card .glink:hover{text-decoration:underline}
+
+  /* talks */
+  .talk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .talk-card{display:flex;flex-direction:column}
+  .talk-photo{position:relative;height:172px;background:linear-gradient(150deg,#e7e0d1,#d6ccba);overflow:hidden}
+  .talk-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .talk-body{padding:18px 19px 20px}
+  .talk-body .ev{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+  .talk-body h3{font-size:1.03rem;line-height:1.25;margin-bottom:8px}
+  .talk-body .where{font-size:.84rem;color:var(--ink-faint)}
+  .talk-body .award-note{display:inline-block;margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:.64rem;color:var(--accent);background:rgba(21,86,74,.08);border:1px solid rgba(21,86,74,.18);padding:3px 8px;border-radius:999px}
+  .talk-extra{margin-top:18px;padding:16px 20px;border:1px dashed var(--line);border-radius:var(--r);
+    font-size:.9rem;color:var(--ink-soft);background:var(--paper-2)}
+  .talk-extra strong{color:var(--ink);font-weight:600}
+  .talk-extra ul{margin:8px 0 0 18px}
+  .talk-extra li{margin:4px 0}
+
+  /* industry 2x2 */
+  .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .ind-card{display:flex;flex-direction:column}
+  .ind-photo{position:relative;height:172px;background:linear-gradient(150deg,#e7e0d1,#d6ccba);overflow:hidden}
+  .ind-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+  .ind-body{padding:20px 22px}
+  .ind-body .org{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+  .ind-body h3{font-size:1.16rem}
+  .ind-body .role{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-faint)}
+  .ind-body p{font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+  .ind-body .badge{display:inline-block;margin-top:12px;font-family:"JetBrains Mono",monospace;
+    font-size:.68rem;letter-spacing:.04em;color:var(--accent);background:rgba(21,86,74,.08);
+    border:1px solid rgba(21,86,74,.18);padding:3px 9px;border-radius:999px}
+
+  /* education */
+  .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .edu-card{padding:24px 22px}
+  .edu-card .deg{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .edu-card h3{font-size:1.18rem;margin-bottom:5px}
+  .edu-card .field{color:var(--ink-soft);font-size:.95rem;margin-bottom:14px}
+  .edu-card .foot{font-size:.85rem;color:var(--ink-faint);border-top:1px solid var(--line);
+    padding-top:12px;margin-top:auto}
+  .edu-card .diss{font-size:.86rem;color:var(--ink-soft);font-style:italic;line-height:1.45}
+
+  /* projects grid */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .proj{display:flex;flex-direction:column;padding:20px 20px 18px}
+  .proj h3{font-size:1.04rem;line-height:1.2;margin-bottom:10px;padding-right:18px}
+  .proj p{font-size:.85rem;color:var(--ink-soft);line-height:1.5;flex:1}
+  .proj .tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 16px}
+  .proj .tags span{font-family:"JetBrains Mono",monospace;font-size:.64rem;color:var(--ink-faint);
+    background:var(--paper);border:1px solid var(--line);padding:2px 7px;border-radius:6px}
+  .proj .repo{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--link);
+    align-self:flex-start;transition:.15s}
+  .proj .repo::after{content:" →";transition:.18s ease}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:34px 0 50px;margin-top:18px}
+  .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+  .foot-row .fname{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:600}
+  .foot-links{display:flex;flex-wrap:wrap;gap:18px;font-family:"JetBrains Mono",monospace;font-size:.76rem}
+  .foot-links a{color:var(--ink-soft);transition:.15s}
+  .foot-links a:hover{color:var(--link)}
+  .foot-row .cr{width:100%;font-size:.76rem;color:var(--ink-faint);margin-top:6px}
+
+  /* ---------- entrance animation ---------- */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .hero .portrait{animation-delay:.05s}
+  .hero .name-block{animation-delay:.16s}
+  section{animation-delay:.05s}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;animation:none}
+    .card,.links a{transition:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .research-grid,.grant-grid{grid-template-columns:1fr 1fr}
+    .talk-grid{grid-template-columns:1fr 1fr}
+    .edu-grid{grid-template-columns:1fr}
+    .proj-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:760px){
+    .site-nav{align-items:flex-start;padding-top:10px;padding-bottom:10px}
+    .site-nav .nav-links{gap:10px 13px}
+    .hero{grid-template-columns:1fr;gap:26px;padding:44px 0 8px;text-align:left}
+    .portrait{width:150px;height:182px}
+    .research-grid,.grant-grid,.talk-grid,.ind-grid,.proj-grid,.hon-grid{grid-template-columns:1fr}
+    .pub{grid-template-columns:1fr;gap:6px}
+    .pub .plink{padding-top:2px}
+    .lede{max-width:none}
+    section{padding:42px 0}
+  }
+  @media(max-width:560px){
+    body{font-size:16px}
+    .wrap{padding-left:20px;padding-right:20px}
+    .site-nav .brand{display:none}
+    .site-nav .nav-links{justify-content:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<div class="site-nav-shell">
+  <nav class="site-nav wrap" aria-label="Primary navigation">
+    <a class="brand" href="#about">Nzube Ohalete</a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#honors">Honors</a>
+      <a href="#grants">Grants</a>
+      <a href="#talks">Presentations</a>
+      <a href="#industry">Industry</a>
+      <a href="#education">Education</a>
+    </div>
+  </nav>
+</div>
+
+<header class="wrap">
+  <div class="hero">
+    <div class="portrait reveal">
+      <img src="images/headshot.jpg" alt="Nzubechukwu Ohalete" onerror="this.style.display='none'">
+      <span class="ph">add<br>images/headshot.jpg</span>
+    </div>
+    <div class="name-block reveal">
+      <div class="kicker">Trustworthy AI &middot; Synthetic Data &middot; LLM Agents &middot; Data Quality</div>
+      <h1 class="display">Nzubechukwu Ohalete <span class="nick">(Nzube)</span></h1>
+      <p class="lede">Part-Time Assistant Professor of Data Science &amp; Analytics at Kennesaw State University. I study when AI-generated data can be trusted, with a focus on LLM agents, synthetic respondents, demographic fidelity, and data integrity.</p>
+      <div class="meta-loc">Atlanta, Georgia</div>
+      <nav class="links" aria-label="Profile links">
+        <a href="mailto:nohalete@kennesaw.edu"><span class="dot"></span>Email</a>
+        <a href="https://scholar.google.com/citations?user=GTUpTUUAAAAJ&hl=en" target="_blank" rel="noopener"><span class="dot"></span>Google Scholar</a>
+        <a href="https://orcid.org/0009-0000-5769-9594" target="_blank" rel="noopener"><span class="dot"></span>ORCID</a>
+        <a href="https://www.linkedin.com/in/nzube-ohalete/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+        <a href="https://github.com/Profzubbyd" target="_blank" rel="noopener"><span class="dot"></span>GitHub</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ABOUT -->
+  <section class="reveal" id="about">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">About</h2></div>
+    <p class="about-body">
+      AI systems are increasingly used to generate synthetic data, automate data collection, and stand in for human respondents. My research asks when those outputs are valid, representative, and trustworthy. I build LLM agents for structured data collection, evaluate memory and statefulness, audit synthetic populations against real-world benchmarks, and study how AI-generated submissions can be identified when automation threatens data integrity.
+      <br><br>
+      My work sits at the intersection of <strong>trustworthy AI</strong>, <strong>synthetic data generation</strong>, <strong>survey methodology</strong>, and <strong>algorithmic bias</strong>. Alongside my academic research, I have partnered with <strong>Delta Air Lines</strong>, <strong>Blue Cross Blue Shield of Tennessee</strong>, <strong>Atlanticus</strong>, and <strong>Southern Company</strong> on applied machine learning and analytics problems in transportation, healthcare, finance, and energy.
+    </p>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="reveal" id="research">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Research</h2></div>
+    <div class="research-grid">
+      <article class="card research-card">
+        <div class="rnum">Study 1</div>
+        <h3>Autonomous LLM Survey Agents</h3>
+        <p>I developed a locally deployed LLM agent that combines browser automation, DOM parsing, COSTAR-A prompting, layered response matching, and validation-error correction to complete multi-format Qualtrics surveys without human intervention.</p>
+        <div class="rstat">Llama 3.1-8B · 8 question types · 100% completion across 3 surveys</div>
+      </article>
+      <article class="card research-card">
+        <div class="rnum">Study 2</div>
+        <h3>Memory Architectures for Stateful LLMs</h3>
+        <p>I compared no memory, rolling summarization, structured JSON injection, and retrieval-augmented generation across surveys of 10 to 100 questions, measuring internal consistency, token cost, and completion time.</p>
+        <div class="rstat">240-run factorial experiment · up to 98% internal consistency</div>
+      </article>
+      <article class="card research-card">
+        <div class="rnum">Study 3</div>
+        <h3>Demographic Fidelity of Synthetic Populations</h3>
+        <p>I audited 10,138 synthetic personas from ten contemporary models across the Claude, GPT-5, GPT-OSS, Llama, and Qwen families against U.S. Census benchmarks under batch and incremental generation.</p>
+        <div class="rstat">10,138 personas · 10 models · Census-benchmarked demographic audit</div>
+      </article>
+    </div>
+    <div class="research-agenda">
+      <strong>Research agenda:</strong> My next projects focus on diversity-preserving and calibrated synthetic-data generation, longitudinal and cross-national auditing of model outputs, and detection methods that rely on behavioral signatures rather than traditional consistency checks. The broader goal is to make AI-generated data auditable enough that researchers can defend when it should, and should not, substitute for human data.
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="reveal" id="publications">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Publications &amp; Manuscripts</h2></div>
+    <div class="pubs">
+      <div class="pub">
+        <div class="yr">2026</div>
+        <div>
+          <div class="ptitle">When Survey Platforms Coach Bots: Autonomous Online Survey Completion by a Locally Deployed LLM Agent on Consumer-Grade Hardware</div>
+          <div class="pmeta"><em>Ohalete, N., Gittner, K., &amp; Matheny, L.</em> &middot; Computers in Human Behavior: Artificial Humans <span class="status">Under review</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2026</div>
+        <div>
+          <div class="ptitle">Comparing Memory Architectures for LLM-Based Synthetic Survey-Response Generation</div>
+          <div class="pmeta"><em>Ohalete, N., Gittner, K., &amp; Matheny, L.</em> &middot; Proceedings of the Joint Statistical Meetings 2026 <span class="status">Under review</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2026</div>
+        <div>
+          <div class="ptitle">Adverse Childhood Experiences and Alcohol Use Outcomes among Disadvantaged Young Women in Uganda: Findings from the TOPOWA Study</div>
+          <div class="pmeta"><em>Marsil, D., McNamara, C., Ohalete, N., Perry, L., Willard, J., Palmier, J., &amp; Swahn, M.</em> &middot; BMC Public Health <span class="status">Under review</span></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div>
+          <div class="ptitle">Comparing Different Machine Learning Models for Credit Risk Prediction</div>
+          <div class="pmeta"><em>Ohalete, N., Muritala, F., &amp; Ray, H.</em> &middot; Joint Statistical Meetings 2025 <span class="status">Proceedings</span></div>
+        </div>
+        <a class="plink" href="https://doi.org/10.5281/zenodo.16952069" target="_blank" rel="noopener">DOI</a>
+      </div>
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div>
+          <div class="ptitle">COSTAR-A: A Prompting Framework for Enhancing Large Language Model Performance on Point-of-View Questions</div>
+          <div class="pmeta"><em>Ohalete, N., Gittner, K., &amp; Matheny, L.</em> &middot; arXiv:2510.12637 <span class="status">Preprint</span></div>
+        </div>
+        <a class="plink" href="https://arxiv.org/abs/2510.12637" target="_blank" rel="noopener">arXiv</a>
+      </div>
+      <div class="pub">
+        <div class="yr">2026</div>
+        <div>
+          <div class="ptitle">Assessing the Validity of Large Language Models as Synthetic Survey Respondents: Autonomous Completion, Internal Consistency, and Demographic Fidelity</div>
+          <div class="pmeta"><em>Ohalete, N.</em> &middot; Doctoral dissertation, Kennesaw State University <span class="status">Dissertation</span></div>
+        </div>
+        <a class="plink" href="https://digitalcommons.kennesaw.edu/dissertations/213/" target="_blank" rel="noopener">KSU Digital Commons</a>
+      </div>
+      <div class="pub">
+        <div class="yr">2022</div>
+        <div>
+          <div class="ptitle">A Study of Online Auction Processes Using Functional Data Analysis</div>
+          <div class="pmeta"><em>Ohalete, N.</em> &middot; Master's thesis, Bowling Green State University &middot; OhioLINK ETD</div>
+        </div>
+        <a class="plink" href="http://rave.ohiolink.edu/etdc/view?acc_num=bgsu164880892837653" target="_blank" rel="noopener">OhioLINK</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section class="reveal" id="teaching">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Teaching</h2></div>
+    <p class="teach-lead">I currently serve as a Part-Time Assistant Professor in Kennesaw State University's School of Data Science and Analytics, teaching statistics in R and statistical data mining in Python. My broader teaching experience spans mathematics, statistics, and data science at the undergraduate and graduate levels in the United States and Nigeria. Roles marked <span class="ior">IoR</span> were taught as instructor of record.</p>
+    <div class="table-wrap">
+      <table class="course-tbl">
+        <thead>
+          <tr><th>Course</th><th>Level</th><th>Role &amp; Term</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="c-name">Statistical Data Mining</span><br><span class="c-code">DATA 4310</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> &middot; Fall 2026</td></tr>
+          <tr><td><span class="c-name">Statistical Methods I</span><br><span class="c-code">STAT 3120</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> &middot; Fall 2026</td></tr>
+          <tr><td><span class="c-name">Introduction to Data Science</span><br><span class="c-code">DATA 1501</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> Spring 2026 &middot; TA Fall 2023</td></tr>
+          <tr><td><span class="c-name">Python for Data Science</span><br><span class="c-code">DS 7140</span></td><td>Master's</td><td class="c-role">TA &middot; Spring 2025</td></tr>
+          <tr><td><span class="c-name">Statistical Computing</span><br><span class="c-code">STAT 7020</span></td><td>Master's</td><td class="c-role">TA &middot; Fall 2023, Spring 2024</td></tr>
+          <tr><td><span class="c-name">Data Mining in Business Analytics</span><br><span class="c-code">STAT 4440</span></td><td>Bachelor's</td><td class="c-role">TA &middot; Spring 2022</td></tr>
+          <tr><td><span class="c-name">Data Mining</span><br><span class="c-code">STAT 6440</span></td><td>Master's</td><td class="c-role">TA &middot; Spring 2022</td></tr>
+          <tr><td><span class="c-name">Regression Analysis</span><br><span class="c-code">STAT 5020</span></td><td>Bachelor's, Master's</td><td class="c-role">TA &middot; Fall 2021</td></tr>
+          <tr><td><span class="c-name">Linear and Integer Programming</span><br><span class="c-code">OR 6610</span></td><td>Master's</td><td class="c-role">TA &middot; Fall 2021</td></tr>
+          <tr><td><span class="c-name">Elementary Differential Equations I &amp; II</span><br><span class="c-code">MTH 203 / 204</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> &middot; 2019-2021</td></tr>
+          <tr><td><span class="c-name">Elementary Mathematics I &amp; II</span><br><span class="c-code">MTH 101 / 102</span></td><td>Bachelor's</td><td class="c-role"><span class="ior">IoR</span> &middot; 2019-2021</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- HONORS -->
+  <section class="reveal" id="honors">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Honors</h2></div>
+    <div class="hon-grid">
+      <article class="card hon-card text-only">
+        <div class="yr">2026</div>
+        <h3>JSM Survey Research Methods Section Poster Competition, Winning Poster</h3>
+        <p>Selected as one of two winning posters for “Comparing Memory Architectures for LLM-Based Synthetic Survey-Response Generation.”</p>
+      </article>
+      <article class="card hon-card">
+        <div class="hon-photo">
+          <img src="images/award.jpg" alt="Outstanding Student Award" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/award.jpg</span>
+        </div>
+        <div class="hon-body">
+          <div class="yr">2026</div>
+          <h3>Outstanding Student Award</h3>
+          <p>Recognized as the top doctoral student in KSU's PhD in Data Science &amp; Analytics program.</p>
+        </div>
+      </article>
+      <article class="card hon-card">
+        <div class="hon-photo">
+          <img src="images/award3mt.jpg" alt="Three Minute Thesis First Place Award" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/award3mt.jpg</span>
+        </div>
+        <div class="hon-body">
+          <div class="yr">2026</div>
+          <h3>Three Minute Thesis, First Place</h3>
+          <p>Graduate College, Kennesaw State University. Awarded $1,000 for communicating doctoral research to a non-specialist audience in three minutes.</p>
+        </div>
+      </article>
+      <article class="card hon-card text-only">
+        <div class="yr">2026</div>
+        <h3>Computing Day PhD Research Poster Competition, Third Place</h3>
+        <p>Recognized for research on NLP-based early warning detection of geopolitical oil supply shocks.</p>
+      </article>
+    </div>
+    <div class="hon-extra"><strong>Additional honors:</strong> James A. Sullivan Outstanding Graduate Student Award, BGSU (2022); Atlanticus Holdings Sponsored Capstone Project, Third Place (2024); Southern Company Sponsored Capstone Project, First Place (2023); KSU Dean's 4.0 Club Award (2022-2025).</div>
+  </section>
+
+  <!-- GRANTS -->
+  <section class="reveal" id="grants">
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Grant Activity</h2></div>
+    <div class="grant-grid">
+      <article class="card grant-card">
+        <div class="gstatus">Submitted 2026</div>
+        <h3>Global Health &amp; Wellbeing in an Era of Transformative AI</h3>
+        <div class="sponsor">Coefficient Giving &middot; Exploratory Grant</div>
+        <p>Proposal examining the availability of benchmark data for evaluating the validity of AI-generated synthetic survey respondents in low- and middle-income countries.</p>
+        <div class="amount">$99,634 requested</div>
+        <a class="glink" href="https://coefficientgiving.org/funds/global-health-wellbeing-opportunities/request-for-proposals-global-health-and-wellbeing-in-an-era-of-transformative-ai/" target="_blank" rel="noopener">Grant program</a>
+      </article>
+      <article class="card grant-card">
+        <div class="gstatus">Submitted 2026</div>
+        <h3>Research Grant Program, A Trustworthy Internet</h3>
+        <div class="sponsor">Internet Society Foundation</div>
+        <p>Proposal for research strengthening trust in internet systems through resilience, reliability, accountability, and security at the application layer.</p>
+        <div class="amount">$396,645 requested</div>
+        <a class="glink" href="https://www.isocfoundation.org/grant-programme/research-grant-programme/" target="_blank" rel="noopener">Grant program</a>
+      </article>
+      <article class="card grant-card">
+        <div class="gstatus">Submitted 2025</div>
+        <h3>Navigating Transformative AI</h3>
+        <div class="sponsor">Open Philanthropy &middot; Global Catastrophic Risks Capacity Building Team</div>
+        <p>Proposal supporting work that builds capacity to address risks and research challenges associated with transformative artificial intelligence.</p>
+        <div class="amount">$205,212 requested</div>
+        <a class="glink" href="https://coefficientgiving.org/funds/navigating-transformative-ai/" target="_blank" rel="noopener">Grant program</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRESENTATIONS -->
+  <section class="reveal" id="talks">
+    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Selected Presentations</h2></div>
+    <div class="talk-grid">
+      <article class="card talk-card">
+        <div class="talk-photo">
+          <img src="images/jsm2026.jpeg" alt="JSM 2026 poster presentation" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/jsm2026.jpeg</span>
+        </div>
+        <div class="talk-body">
+          <div class="ev">JSM 2026 &middot; Boston, MA</div>
+          <h3>Comparing Memory Architectures for LLM-Based Synthetic Survey-Response Generation</h3>
+          <div class="where">Joint Statistical Meetings &middot; August 2026</div>
+          <span class="award-note">Winning poster &middot; Survey Research Methods Section</span>
+        </div>
+      </article>
+      <article class="card talk-card">
+        <div class="talk-photo">
+          <img src="images/informs.jpeg" alt="INFORMS 2025 presentation" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/informs.jpeg</span>
+        </div>
+        <div class="talk-body">
+          <div class="ev">INFORMS 2025 &middot; Atlanta, GA</div>
+          <h3>Bridging the Gap: COSTAR-A for Smarter Prompting in Localized Language Models</h3>
+          <div class="where">INFORMS Annual Meeting &middot; October 2025</div>
+        </div>
+      </article>
+      <article class="card talk-card">
+        <div class="talk-photo">
+          <img src="images/jsm.jpeg" alt="JSM 2025 presentation" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/jsm.jpeg</span>
+        </div>
+        <div class="talk-body">
+          <div class="ev">JSM 2025 &middot; Nashville, TN</div>
+          <h3>Optimizing Credit Risk Classification Using Machine Learning Techniques</h3>
+          <div class="where">Joint Statistical Meetings &middot; August 2025</div>
+        </div>
+      </article>
+    </div>
+    <div class="talk-extra">
+      <strong>Additional recent presentations:</strong>
+      <ul>
+        <li>Generating Synthetic Respondent Data for Health Survey Pre-Testing Using Autonomous LLM Agents on Qualtrics, APHA Annual Meeting, San Antonio, November 2026, forthcoming.</li>
+        <li>Influencing Stalking Beliefs among College Students: An Experimental Study of Social Norms, APS Annual Convention, Barcelona, May 2026, presented by co-author C. McNamara.</li>
+        <li>Comparing Memory Architectures for AI Agents Across Extended Interactions, KSU Spring Analytics Day, May 2026.</li>
+        <li>Panelist, “AI in Higher Education: Evolving Use Cases and Ethical Implications,” USG Ethics Awareness Week, Kennesaw State University, November 2025.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INDUSTRY RESEARCH -->
+  <section class="reveal" id="industry">
+    <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Industry Research</h2></div>
+    <div class="ind-grid">
+      <article class="card ind-card">
+        <div class="ind-photo">
+          <img src="images/delta.jpg" alt="Delta Air Lines presentation" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/delta.jpg</span>
+        </div>
+        <div class="ind-body">
+          <div class="org"><h3>Delta Air Lines</h3><span class="role">Customer Experience</span></div>
+          <p>Analyzed 32M+ calls, 13M+ messages, and 60M+ intent records to identify drivers of repeat customer contacts. A CatBoost model reached 77% accuracy and supported recommendations for a modeled 13% reduction in repeat contacts.</p>
+        </div>
+      </article>
+      <article class="card ind-card">
+        <div class="ind-photo">
+          <img src="images/southern.jpg" alt="Southern Company presentation" loading="lazy" onerror="this.style.display='none'">
+          <span class="ph">add<br>images/southern.jpg</span>
+        </div>
+        <div class="ind-body">
+          <div class="org"><h3>Southern Company</h3><span class="role">Churn Forecasting</span></div>
+          <p>Forecast early customer churn across 64 engineered features. A random forest reached 96% accuracy and 96% F1.</p>
+          <span class="badge">1st place &middot; CDSA Industry Competition</span>
+        </div>
+      </article>
+      <article class="card ind-card">
+        <div class="ind-body">
+          <div class="org"><h3>Blue Cross Blue Shield of TN</h3><span class="role">Healthcare</span></div>
+          <p>Analyzed 540K+ member records and 487K+ medical claims to evaluate continuous glucose monitoring, including case-control matching that produced more than 7,500 matched pairs.</p>
+        </div>
+      </article>
+      <article class="card ind-card">
+        <div class="ind-body">
+          <div class="org"><h3>Atlanticus</h3><span class="role">Credit Risk</span></div>
+          <p>Modeled credit risk on 988K+ customer records, applying SMOTE for class imbalance and reducing 458 variables to 116. A random forest reached 88% accuracy and 81% precision.</p>
+          <span class="badge">3rd place &middot; CDSA Industry Competition</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="reveal" id="education">
+    <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Education</h2></div>
+    <div class="edu-grid">
+      <article class="card edu-card" style="display:flex;flex-direction:column">
+        <div class="deg">Ph.D.</div>
+        <h3>Kennesaw State University</h3>
+        <div class="field">Data Science &amp; Analytics</div>
+        <div class="diss">Dissertation: <a class="inline-link" href="https://digitalcommons.kennesaw.edu/dissertations/213/" target="_blank" rel="noopener"><em>Assessing the Validity of Large Language Models as Synthetic Survey Respondents: Autonomous Completion, Internal Consistency, and Demographic Fidelity.</em></a></div>
+        <div class="foot">4.0 / 4.0 &middot; Kennesaw, GA &middot; 2026</div>
+      </article>
+      <article class="card edu-card" style="display:flex;flex-direction:column">
+        <div class="deg">M.S.</div>
+        <h3>Bowling Green State University</h3>
+        <div class="field">Applied Statistics (Business Analytics)</div>
+        <div class="diss">Thesis: <em>A Study of Online Auction Processes Using Functional Data Analysis.</em></div>
+        <div class="foot">3.92 / 4.0 &middot; Bowling Green, OH &middot; April 2022</div>
+      </article>
+      <article class="card edu-card" style="display:flex;flex-direction:column">
+        <div class="deg">B.S.</div>
+        <h3>University of Nigeria</h3>
+        <div class="field">Mathematics</div>
+        <div class="diss">First Class Honors. Thesis on exact solutions of the Navier-Stokes equations.</div>
+        <div class="foot">4.65 / 5.0 &middot; Nsukka, Nigeria &middot; July 2016</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="reveal" id="projects">
+    <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Selected Data Science Projects</h2></div>
+    <div class="proj-grid">
+      <a class="card proj" href="https://github.com/Profzubbyd/spam-classifier" target="_blank" rel="noopener">
+        <h3>SMS Spam Detection</h3>
+        <p>Five classifiers across 5,574 text messages. Random forest reached 98.1% accuracy.</p>
+        <div class="tags"><span>Python</span><span>NLTK</span><span>SMOTE</span><span>scikit-learn</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/animal-images-classification" target="_blank" rel="noopener">
+        <h3>Animal Image Classification</h3>
+        <p>Transfer learning with MobileNetV2 and Bayesian hyperparameter tuning on 1,200 images, reaching 90% test accuracy.</p>
+        <div class="tags"><span>TensorFlow</span><span>Keras</span><span>Transfer Learning</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/Credit_card_fraud_detection" target="_blank" rel="noopener">
+        <h3>Credit Card Fraud Detection</h3>
+        <p>Five classifiers on European cardholder data. A neural network reached 96% accuracy.</p>
+        <div class="tags"><span>Python</span><span>SVC</span><span>KNN</span><span>SMOTE</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/Big-data-One-class-classification" target="_blank" rel="noopener">
+        <h3>Fraud Detection at Scale</h3>
+        <p>A PSOAANN one-class model built on Spark, running over 10M+ transaction records.</p>
+        <div class="tags"><span>Spark</span><span>Python</span><span>PSO</span><span>Big Data</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/recommender-system" target="_blank" rel="noopener">
+        <h3>Amazon Coupon Recommender</h3>
+        <p>A coupon-usage recommender built from ensemble and boosting classifiers with competitive accuracy.</p>
+        <div class="tags"><span>XGBoost</span><span>LightGBM</span><span>scikit-learn</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+      <a class="card proj" href="https://github.com/Profzubbyd/flight-delays-2015" target="_blank" rel="noopener">
+        <h3>U.S. Flight Delay Analysis</h3>
+        <p>Longitudinal multilevel models across 29 major airports, with airport-level and seasonal patterns examined over time.</p>
+        <div class="tags"><span>SAS</span><span>Multilevel Models</span><span>Longitudinal</span></div>
+        <span class="repo">GitHub</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <span class="fname">Nzubechukwu Ohalete</span>
+    <nav class="foot-links" aria-label="Footer links">
+      <a href="mailto:nohalete@kennesaw.edu">Email</a>
+      <a href="https://scholar.google.com/citations?user=GTUpTUUAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+      <a href="https://orcid.org/0009-0000-5769-9594" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://www.linkedin.com/in/nzube-ohalete/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Profzubbyd" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <span class="cr">&copy; <span id="yr"></span> Nzubechukwu Ohalete &middot; Atlanta, Georgia</span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
